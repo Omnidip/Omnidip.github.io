@@ -3,24 +3,25 @@
 }
 
 body {
-  background-color: #14131F;
+  background-color: #eDEADe;
 }
 
 header {
-  background-color: #341A47;
-  color: #DDC;
+  background-color: #DEAD64;
+  color: #eDEADe;
 }
 
 .header_logo {
   background-color: rgba(0,0,0,0.1);
-  color: #fff;
+  color: #eDEADe;
 }
 
 article {
-  background-color: #DDC;
-  color: #3B3535;
+  background-color: #eDEADe;
+  color: #211e26; /*3B3535*/
+  border-color: #211e26
 }
 
 footer {
-  color: #3B3535;
+  color: #eDEADe;
 }
