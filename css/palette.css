@@ -1,0 +1,26 @@
+* {
+
+}
+
+body {
+  background-color: #14131F;
+}
+
+header {
+  background-color: #341A47;
+  color: #DDC;
+}
+
+.header_logo {
+  background-color: rgba(0,0,0,0.1);
+  color: #fff;
+}
+
+article {
+  background-color: #DDC;
+  color: #3B3535;
+}
+
+footer {
+  color: #3B3535;
+}
