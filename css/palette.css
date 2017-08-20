@@ -7,21 +7,21 @@ body {
 }
 
 header {
-  background-color: #DEAD64;
+  background-color: #332533;
   color: #eDEADe;
 }
 
 .header_logo {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0);
   color: #eDEADe;
 }
 
 article {
   background-color: #eDEADe;
-  color: #211e26; /*3B3535*/
-  border-color: #211e26
+  color: #332533; /*3B3535*/
+  border-color: #332533
 }
 
 footer {
-  color: #eDEADe;
+  color: #332533;
 }

@@ -39,8 +39,8 @@ article {
   margin: 5% 10%;
   padding: 5%;
   width: 80%;
-  border: 2px solid;
-  
+  border: 0px solid;
+
 }
 
 p::first-letter {
