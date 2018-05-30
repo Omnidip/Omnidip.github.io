@@ -2,12 +2,20 @@
 
 }
 
+/*
+  purple:    332533
+  off-white: EDEADE
+  salmon:    B76D68
+  brown:     3B3535
+  off-blue:  2C2B3C
+*/
+
 body {
-  background-color: #eDEADe;
+  background-color: #2C2B3C;
 }
 
 header {
-  background-color: #332533;
+  background-color: #2C2B3C;
   color: #eDEADe;
 }
 
@@ -17,11 +25,11 @@ header {
 }
 
 article {
-  background-color: #eDEADe;
-  color: #332533; /*3B3535*/
-  border-color: #332533
+  background-color: #2C2B3C;
+  color: #eDEADe; /*3B3535*/
+  border-color: #2C2B3C
 }
 
 footer {
-  color: #332533;
+  color: #eDEADe;
 }
