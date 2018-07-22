@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Dragon is coming';
+  src: url('Dragon is coming.otf') format('opentype');
+}
+
 /*----------------
 --- HEADER BAR ---
 ----------------*/
@@ -28,9 +33,10 @@ header {
   width: 275px !important;
   height: 100%;
   margin: 0;
-  padding: 3rem 2.2rem;
-  font-weight: bold;
-  font-size: 3rem;
+  padding: 1rem 2rem;
+
+  font-family: 'Dragon is coming';
+  font-size: 9rem;
   line-height: 3rem;
 
   position: relative;
@@ -38,15 +44,15 @@ header {
 }
 
 .header_logo::first-line {
-  font-size: 3.5rem;
+  font-size: 9.5rem;
 }
 
 .header_logo_l{
-  font-size: 4rem;
+  font-size: 10rem;
 }
 
 .header_logo_s{
-  font-size: 3.5rem;
+  font-size: 9.5rem;
 }
 
 .header_nav_bar {

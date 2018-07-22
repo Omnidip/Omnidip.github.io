@@ -49,7 +49,7 @@ function draw_particles(){
         if(part[4] == 0){
             lac_context.fillStyle = "#3D3C4D";
         }else{
-            lac_context.fillStyle = "#B76D68";
+            lac_context.fillStyle = "#A65C57";
         }
 
         ang = ((Math.PI*2.0)/logo_n_arms) * part[0] + ((Math.PI/1.8) * part[1]) - (logo_step/500.0);
