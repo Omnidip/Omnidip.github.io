@@ -11,12 +11,20 @@
 */
 
 body {
-  background-color: #2C2B3C;
+  background-color: #eDEADe;
 }
 
 header {
   background-color: #2C2B3C;
+}
+
+.header_link {
   color: #eDEADe;
+}
+
+.header_link span:hover {
+  color: #B76D68;
+  cursor: pointer;
 }
 
 .header_logo {
@@ -25,11 +33,11 @@ header {
 }
 
 article {
-  background-color: #2C2B3C;
-  color: #eDEADe; /*3B3535*/
-  border-color: #2C2B3C
+  background-color: #eDEADe;
+  color:  #2C2B3C;/*3B3535*/
+  border-color: #2C2B3C;
 }
 
 footer {
-  color: #eDEADe;
+  color: #2C2B3C;
 }
