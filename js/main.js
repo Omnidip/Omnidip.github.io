@@ -1,3 +1,5 @@
+//Credits
+console.log("Logo font is 'Dragon is coming' by Maelle.K | Thomas Boucherie on DaFont.com");
 
 //----------------------//
 //----LOGO ANIMATION----//
