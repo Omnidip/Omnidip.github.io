@@ -14,34 +14,42 @@
     <header>
       <canvas class="header_logo_animation" id="logo_animation" width="700" height="120"></canvas>
       <div class="header_logo one columns">
-        <span class="header_logo_l">H</span>ypothetical
-        </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span class="header_logo_s">U</span>niverse
+        <a href="javascript:load_blog();">
+          <span class="header_logo_l">H</span>ypothetical
+          </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="header_logo_s">U</span>niverse
+        </a>
       </div>
       <script src="js/logo.js"></script>
 
-      <div class="header_link one columns"><span class="bottom center"><a href="index.html">Blog</a></span></div>
-      <div class="header_link one columns"><span class="bottom center"><a href="archive.html">Archive</a></span></div>
-      <div class="header_link one columns"><span class="bottom center"><a href="about.html">About</a></span></div>
+      <div class="header_link one columns"><span class="bottom center"><a href="javascript:load_blog();">Blog</a></span></div>
+      <div class="header_link one columns"><span class="bottom center"><a href="javascript:load_archive();">Archive</a></span></div>
+      <div class="header_link one columns"><span class="bottom center"><a href="javascript:load_about();">About</a></span></div>
     </header>
 
-    <div class="nav_bar">
-      <button class="prev_btn" onclick="get_post(-1)">🢔 Prev</button>
-      <button class="next_btn" onclick="get_post(1)">Next 🢖</button>
-    </div>
-    
-    <article id="post">
+    <main id="blog_content" style="display: none;">
+      <div class="nav_bar">
+        <button class="prev_btn" onclick="get_post(-1)">🢔 Prev</button>
+        <button class="next_btn" onclick="get_post(1)">Next 🢖</button>
+      </div>
       
-    </article>
+      <article id="post">
+      
+      </article>
 
-    <div class="nav_bar">
-      <button onclick="get_post(-1)">🢔 Prev</button>
-      <button onclick="get_post(1)">Next 🢖</button>
-    </div>
+      <footer>
+        ~ ~ ⸎ ~ ~
+      </footer>
+      
+      <div class="nav_bar">
+          <button onclick="get_post(-1)">🢔 Prev</button>
+          <button onclick="get_post(1)">Next 🢖</button>
+      </div>
+    </main>
 
-    <footer>
-      ~ ⸎ ~
-    </footer>
+    <main id="page_content" style="display: none;">
+
+    </main>
   </body>
 
   <script src="js/main.js"></script>

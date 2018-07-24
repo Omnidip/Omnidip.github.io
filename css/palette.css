@@ -19,9 +19,13 @@ header {
   color: #eDEADe;
 }
 
-.header_link span:hover {
-  color: #B76D68;
+.header_link span a:hover {
+  color: #B76D68 !important;
   cursor: pointer;
+}
+
+header a:hover {
+  color: #eDEADe;
 }
 
 .header_logo {

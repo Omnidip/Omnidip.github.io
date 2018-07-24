@@ -74,8 +74,12 @@ header {
   z-index: 2;
 }
 
-.header_link a {
+header a {
   color: inherit;
+}
+
+.header_logo a {
+  text-decoration: none;
 }
 
 /*------------------
@@ -83,7 +87,7 @@ header {
 ------------------*/
 
 .nav_bar {
-  margin: 3% 0 0 0;
+  margin: 2% 0 0 0;
   padding: 0% 3%;
   text-align: center;
   letter-spacing: 10rem;
@@ -100,7 +104,7 @@ header {
 
 article {
   margin: 0% 10% 3% 10%;
-  padding: 0% 5%;
+  padding: 3% 5% 0 5%;
   width: 80%;
   border: 0px solid;
 
