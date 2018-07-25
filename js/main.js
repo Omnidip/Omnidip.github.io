@@ -3,6 +3,9 @@
 latest_post = 1;
 // --------------- //
 
+//Credits
+console.log("Main font is 'Noto Semi Condensed Light' by Google");
+
 function load_post(post){
     post_body = document.getElementById("post");
     var xhttp = new XMLHttpRequest();
