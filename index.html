@@ -13,18 +13,20 @@
   <body>
     <header>
       <canvas class="header_logo_animation" id="logo_animation" width="700" height="120"></canvas>
-      <div class="header_logo one columns">
-        <a href="javascript:load_blog();">
-          <span class="header_logo_l">H</span>ypothetical
-          </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span class="header_logo_s">U</span>niverse
+      <div class="header_logo row">
+        <a href="javascript:load_blog();" class="hidden_link">
+          Hypothetical Universe;
+        </a>
+        <a href="javascript:load_blog();" class="header_logo_small hidden_link">
+          A series of mostly incoherent technical ramblings
         </a>
       </div>
       <script src="js/logo.js"></script>
-
-      <div class="header_link one columns"><span class="bottom center"><a href="javascript:load_blog();">Blog</a></span></div>
-      <div class="header_link one columns"><span class="bottom center"><a href="javascript:load_archive();">Archive</a></span></div>
-      <div class="header_link one columns"><span class="bottom center"><a href="javascript:load_about();">About</a></span></div>
+      <div class="row">
+        <div class="header_link one columns hidden_link"><span class="bottom center"><a href="javascript:load_blog();">Blog</a></span></div>
+        <div class="header_link one columns hidden_link"><span class="bottom center"><a href="javascript:load_archive();">Archive</a></span></div>
+        <div class="header_link one columns hidden_link"><span class="bottom center"><a href="javascript:load_about();">About</a></span></div>
+      </div>
     </header>
 
     <main id="blog_content" style="display: none;">
@@ -38,7 +40,7 @@
       </article>
 
       <footer>
-        🙞🙟 ~ ~ ⸎ ~ ~ 🙝🙜 
+        <a href="https://en.wikipedia.org/wiki/Coronis_(textual_symbol)" class="hidden_link">~ ~ ⸎ ~ ~</a>
       </footer>
       
       <div class="nav_bar">

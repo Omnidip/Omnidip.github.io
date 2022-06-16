@@ -1,0 +1,79 @@
+<h1>Tomographic Projection Based Machine Learning ☢</h1>
+<p>
+    An argument can be made that taking a picture is a simple form of machine learning.
+</p>
+<p>
+    Ok, hear me out. Think about it this way; A camera takes in discrete samples of an unknown continuous function, then creates an approximation of that function for 
+    use in calculations. In this case the samples are photons hitting the camera sensor. These photons contain the input values (the 2D coordinates on the projection
+    of the 3D scene, quantized to pixels) and the output values (the wavelength of the reflected/emitted light, quantized to rgb) of the function. 
+</p>
+<p>
+    The approximation of the function is a simple lookup table of the quantized values within some domain (the size of the image in pixels) and range (the limits
+    of the color encoding in bytes). Because this approximation is so simple the only relationship between the samples that gets encoded is samples that hit the region
+    of the camera sensor that correspond to the same pixel may get averaged (or something of that ilk, depending on the encoding software in the camera itself). As a result
+    the function approximation (aka. the picture) requires a <b>lot</b> of samples to produce anything meaningful. 
+</p>
+<p>
+    The end result is a representation of a function f:({0..width},{0..height})->({0..depth_red},{0..depth_green},{0..depth_blue}) that takes in a 2D vector 
+    (which could be of real values using standard interpolation techniques) representing a point on the projection mapping and outputs a 3D vector representing 
+    the color of that point.
+</p>
+<p>
+    Your basic neural net uses a sequence of overlapping activation functions to try to approximate the function it is learning. It uses some
+    fancy calculus and statistics to attempt to optimally position and scale these functions on top of each other. This (in theory, it a bit trickier in practice)
+    minimizes the number of coefficients that the final result needs to store in order to approximate the function. This means a neural net could be thought of as a 
+    just a form of image compression with interesting properties.
+</p>
+<p>
+    The uncompressed image created by the camera can be looked at in a very similar way. You can look at the values of the pixels as magnitudes of a w*h grid of a single 
+    layer of stepped functions with fixed phases. Compared to a simple neural net, this lacks both the benefit of shiftable phase in the partial functions, 
+    as well as the overlapping effect of hidden layers, which magnify their potential complexity. The effect of this is twofold:
+    <ol>
+        <li>
+            You are storing far more data than is necessary when trying to approximate most functions. The scale of which increases exponentially as the 
+            bounds of the function increase. Image compression could potentially fix this, but it would have to be fairly specialized to solve the second
+            problem which is,
+        </li>
+        <li>
+            As mentioned previously, it can't create a meaningful approximation with a sparse number of samples.
+        </li>
+    </ol>
+</p>
+<p>
+    Now the process of taking a picture is a very naive learning algorithm, but you could see why it <i>could</i> be classified as one. That's where CT scanning comes in. 
+    In a CT scan you take a series of 1D projections of the average density of an object from various different angles, then reconstruct them into the
+    2D representation using a technique known as filtered back projection. Back projection consists of re-projecting the 1D representations over the image
+    by creating a perpendicular line for each pixel across the image, and then adding/averaging all of those together. The "filtered" part is simply adding different
+    kernels to the 1D projection before reconstruction to create different effects like sharpening edges or generating contrast for specific values (similar to filters
+    on a normal image). 
+</p>
+<p>
+    A CT scanner requires far fewer photons making it to the sensor than a normal camera, simply because it has to, but as a result it the techniques
+    used can make a good representation using far fewer samples. Additionally since all the data is 1D projections across a 2D plane you need much less data for the
+    same effective resolution as an image (think circumference vs area).
+    So I thought hey, why limit this technique to density samples acquired from x-rays? Could we use an simulated "CT scanner" on a set of samples from a function to try to
+    re-construct it from that? Turns out, you can! It's not very good, but it works!
+</p>
+<p>
+    To get it to work, I took a number of samples from a 2D function, found where on each of the 1D projection they ended up, then repeatedly adjusted the 1D projections with a
+    "learning envelope" by some learning rate to get them to match the training data. The reason the image is trained gradually instead of all at once like normal back projection 
+    was to allow the algorithm to stop if it starts overfitting and loses accuracy on a set of training samples. The learning envelope was a simple linear droppoff function that 
+    allowed the sample to affect the "pixels" around the "pixel" it was on slightly, blurring the image and generalizing it better. The "pixels" in the 1D projections are values within a sample table
+    The 1D projections were angled based on the golden
+    ratio to generally cover the largest number of angles if the number of projections was increased arbitrarily. The projections were also offset slightly from each other to
+    allow for overlapping pixels and squeeze out a little more resolution. Finally a smoothing kernel was applied to the final result to generalize it a bit better.
+</p>
+<p>
+    Here are some results of testing on the droplet function:
+    <img src="/img/drop_agg.png" alt="Aggregate of droplet function results">
+    On the far left is the target function (100px by 100px), next is 32 1D projections consisting of 32 values each and trained on 1000 random samples, next is the same thing but with 16 functions of size 16, 
+    and the right most is 16x16 but trained on only 100 samples.
+</p>
+<p>
+    Here is some testing on xor:
+    <img src="/img/xor_agg.png" alt="Aggregate of xor function results">
+    On the far left is the target function (100px by 100px), next is 16x16 on 1000 samples, and the rightmost is 8x8 on 100 samples.
+</p>
+<p>
+    A working jupyter notebook implementation can be found on my github: <a href="https://github.com/Omnidip/Tomographic_Projection_Learning">[download source from github]</a></br></br>
+</p>

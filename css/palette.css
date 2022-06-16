@@ -1,10 +1,10 @@
 
 /*
-  purple:    332533
-  off-white: EDEADE
-  salmon:    B76D68
-  brown:     3B3535
-  off-blue:  2C2B3C
+  off-white:    EDEADE
+  salmon:       B76D68
+  blue:         2C2B3C
+  off-salmon:   A65C57
+  off-blue:     3D3C4D
 */
 
 body {
@@ -19,6 +19,14 @@ header {
   color: #eDEADe;
 }
 
+a {
+  color: #B76D68;
+}
+
+a:hover {
+  color: #A65C57;
+}
+
 .header_link span a:hover {
   color: #B76D68 !important;
   cursor: pointer;
@@ -31,6 +39,12 @@ header a:hover {
 .header_logo {
   background-color: rgba(0,0,0,0);
   color: #eDEADe;
+  
+  text-shadow:
+  -2px -2px 0 #2C2B3C,  
+   2px -2px 0 #2C2B3C,
+   -2px 2px 0 #2C2B3C,
+    2px 2px 0 #2C2B3C;
 }
 
 article {
